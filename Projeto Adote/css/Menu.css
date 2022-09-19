@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    max-height: 400px;
+}
+
+#container{
+    background: rgb(243, 201, 11);
+    display:flex;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    box-shadow: 0 5px 15px;
+    position: fixed;
+    z-index: 1;
+}
+
+.burguer{
+    display: none;
+    position: relative;
+    left: 300px;
+}
+
+label{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 30px;
+}
+
+label span{
+    position: relative;
+    display: block;
+    height: 5px;
+    margin: 2px;
+    width: 100%;
+    border-radius: 30px;
+    background: black;
+    transition: 0.25s ease-in-out;
+}
+
+label span:nth-child(1){
+    top: 0;
+}
+
+label span:nth-child(2){
+    top: 8;
+}
+
+label span:nth-child(3){
+    top: 16;
+}
+
+#menu:checked + label span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+#menu:checked + label span:nth-child(2){
+    opacity: 0;    
+}
+
+#menu:checked + label span:nth-child(3){
+    transform: rotate(45deg);
+    top: -8px;    
+}
+
+img{
+    width: 100px;
+}
+
+.logo{
+    margin-top: 5px;
+    margin-left:10%;
+    margin-right: 100px;
+}
+
+.logo img{
+    border-radius: 50%;
+    box-shadow: 0 5px 15px;
+}
+
+.menu{
+    position: relative;
+    left: 65%;
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+
+li{
+    background-image: linear-gradient(90deg,red,blue);
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    background-position: left bottom;
+    transition: background-size 500ms ease;
+    cursor: pointer;
+    font-weight: 900;
+    display: inline;
+    margin-right: 30px;
+    list-style-type: none;
+    border-radius: 5px;
+}
+
+li:hover{
+    background-size: 100% 3px;
+}
+
+.login{
+    position: relative;
+    left: 500px;
+}
+
+@media (max-width: 1200px){
+    .login{
+        position: static;
+    }
+}
+
+@media (max-width: 450px){
+    nav, li{
+        display: none;
+    }
+
+    #menu{
+        position: absolute;
+        opacity: 0;
+    }
+
+    
+
+    #menu:checked{
+        background: rgb(243, 201, 11);
+        height: 100%;    
+    }
+
+    .burguer{
+        display: flex;
+    }
+}
